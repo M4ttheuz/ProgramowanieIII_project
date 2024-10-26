@@ -1,0 +1,14 @@
+C:\Users\student\source\repos\WorldofTanks\src\WoT\obj\Debug\net8.0\WoT.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\student\source\repos\WorldofTanks\src\WoT\obj\Debug\net8.0\WoT.AssemblyInfoInputs.cache
+C:\Users\student\source\repos\WorldofTanks\src\WoT\obj\Debug\net8.0\WoT.AssemblyInfo.cs
+C:\Users\student\source\repos\WorldofTanks\src\WoT\obj\Debug\net8.0\WoT.csproj.CoreCompileInputs.cache
+C:\Users\student\source\repos\WorldofTanks\src\WoT\bin\Debug\net8.0\WoT.exe
+C:\Users\student\source\repos\WorldofTanks\src\WoT\bin\Debug\net8.0\WoT.deps.json
+C:\Users\student\source\repos\WorldofTanks\src\WoT\bin\Debug\net8.0\WoT.runtimeconfig.json
+C:\Users\student\source\repos\WorldofTanks\src\WoT\bin\Debug\net8.0\WoT.dll
+C:\Users\student\source\repos\WorldofTanks\src\WoT\bin\Debug\net8.0\WoT.pdb
+C:\Users\student\source\repos\WorldofTanks\src\WoT\obj\Debug\net8.0\WoT.dll
+C:\Users\student\source\repos\WorldofTanks\src\WoT\obj\Debug\net8.0\refint\WoT.dll
+C:\Users\student\source\repos\WorldofTanks\src\WoT\obj\Debug\net8.0\WoT.pdb
+C:\Users\student\source\repos\WorldofTanks\src\WoT\obj\Debug\net8.0\WoT.genruntimeconfig.cache
+C:\Users\student\source\repos\WorldofTanks\src\WoT\obj\Debug\net8.0\ref\WoT.dll

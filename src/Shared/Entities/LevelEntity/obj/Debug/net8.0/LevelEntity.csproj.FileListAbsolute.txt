@@ -1,0 +1,11 @@
+C:\Users\student\source\repos\WorldofTanks\src\Shared\Entities\LevelEntity\bin\Debug\net8.0\LevelEntity.deps.json
+C:\Users\student\source\repos\WorldofTanks\src\Shared\Entities\LevelEntity\bin\Debug\net8.0\LevelEntity.dll
+C:\Users\student\source\repos\WorldofTanks\src\Shared\Entities\LevelEntity\bin\Debug\net8.0\LevelEntity.pdb
+C:\Users\student\source\repos\WorldofTanks\src\Shared\Entities\LevelEntity\obj\Debug\net8.0\LevelEntity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\student\source\repos\WorldofTanks\src\Shared\Entities\LevelEntity\obj\Debug\net8.0\LevelEntity.AssemblyInfoInputs.cache
+C:\Users\student\source\repos\WorldofTanks\src\Shared\Entities\LevelEntity\obj\Debug\net8.0\LevelEntity.AssemblyInfo.cs
+C:\Users\student\source\repos\WorldofTanks\src\Shared\Entities\LevelEntity\obj\Debug\net8.0\LevelEntity.csproj.CoreCompileInputs.cache
+C:\Users\student\source\repos\WorldofTanks\src\Shared\Entities\LevelEntity\obj\Debug\net8.0\LevelEntity.dll
+C:\Users\student\source\repos\WorldofTanks\src\Shared\Entities\LevelEntity\obj\Debug\net8.0\refint\LevelEntity.dll
+C:\Users\student\source\repos\WorldofTanks\src\Shared\Entities\LevelEntity\obj\Debug\net8.0\LevelEntity.pdb
+C:\Users\student\source\repos\WorldofTanks\src\Shared\Entities\LevelEntity\obj\Debug\net8.0\ref\LevelEntity.dll
