@@ -2,27 +2,40 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    public Transform tank; // Transform czo³gu, za którym bêdzie pod¹¿aæ kamera
-    public Transform turret; // Transform wie¿y czo³gu
-    public Vector3 offset; // Offset kamery wzglêdem czo³gu
-    public float smoothSpeed = 0.125f; // Prêdkoœæ wyg³adzania ruchu kamery
+    public Transform tank;
+    public Transform turret;
+    public Vector3 offset;
+    public float smoothSpeed = 0.125f;
+
+    private bool isTankAlive = true;
+
+    private TankHealth tankHealth;
 
     void Start()
     {
-        // Ustawienie pocz¹tkowej pozycji kamery z odpowiednim offsetem
+        tankHealth = tank.GetComponent<TankHealth>();
+
         transform.position = tank.position + offset;
     }
 
     void LateUpdate()
     {
-        // Obliczamy docelow¹ pozycjê kamery
-        Vector3 desiredPosition = tank.position + offset;
-        // Wyg³adzamy ruch kamery
-        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
-        // Ustawiamy now¹ pozycjê kamery
-        transform.position = smoothedPosition;
+        if (tankHealth != null && tankHealth.currentHealth > 0)
+        {
+            isTankAlive = true;
+        }
+        else
+        {
+            isTankAlive = false;
+        }
+        
+        if (isTankAlive)
+        {
+            Vector3 desiredPosition = tank.position + offset;
+            Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
+            transform.position = smoothedPosition;
 
-        // Ustawiamy kamerê, aby patrzy³a w kierunku wie¿y
-        transform.LookAt(turret.position); // Kamera patrzy w kierunku wie¿y czo³gu
+            transform.LookAt(turret.position);
+        }
     }
 }
