@@ -11,6 +11,12 @@ public class TankHealth : MonoBehaviour
 
     public GameObject GameOverText;
 
+    public int GetCurrentHealth()
+    {
+        return currentHealth;
+    }
+
+
     void Start()
     {
         currentHealth = maxHealth;

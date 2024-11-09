@@ -7,8 +7,6 @@ public class CameraFollow : MonoBehaviour
     public Vector3 offset;
     public float smoothSpeed = 0.125f;
 
-    private bool isTankAlive = true;
-
     private TankHealth tankHealth;
 
     void Start()
@@ -20,16 +18,7 @@ public class CameraFollow : MonoBehaviour
 
     void LateUpdate()
     {
-        if (tankHealth != null && tankHealth.currentHealth > 0)
-        {
-            isTankAlive = true;
-        }
-        else
-        {
-            isTankAlive = false;
-        }
-        
-        if (isTankAlive)
+        if (tankHealth != null)
         {
             Vector3 desiredPosition = tank.position + offset;
             Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);

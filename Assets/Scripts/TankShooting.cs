@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class TankShooting : MonoBehaviour
 {
-    public GameObject bulletPrefab; // Prefab pocisku
-    public Transform firePoint;     // Punkt, z kt�rego pocisk jest wystrzeliwany
-    public float bulletSpeed = 20f; // Pr�dko�� pocisku
-    public float fireRate = 1f;     // Szybko�� strzelania (pociski na sekund�)
+    public GameObject bulletPrefab;
+    public Transform firePoint;     
+    public float bulletSpeed = 20f; 
+    public float fireRate = 1f;     
 
     private float nextFireTime = 0f;
 
@@ -20,15 +20,12 @@ public class TankShooting : MonoBehaviour
 
     void Shoot()
     {
-        // Tworzenie pocisku
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
 
-        // Nadanie pociskowi pr�dko�ci
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         rb.linearVelocity = firePoint.forward * bulletSpeed;
 
-        // Opcjonalnie: dodanie czasu �ycia pocisku
-        Destroy(bullet, 3f); // Zniszczenie pocisku po 3 sekundach
+        Destroy(bullet, 3f);
     }
 }
 
