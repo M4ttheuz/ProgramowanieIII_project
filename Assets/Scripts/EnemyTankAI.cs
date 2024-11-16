@@ -8,9 +8,11 @@ public class EnemyTankAI : MonoBehaviour
     public GameObject bulletPrefab;
     public float moveSpeed = 5f;
     public float rotationSpeed = 2f;
-    public float fireRate = 2f; 
+    public float fireRate = 2f;
+    public float reloadTime = 2f;
 
     private float nextFireTime = 0f;
+    private bool isReloading = false;
 
     void Update()
     {
@@ -19,10 +21,14 @@ public class EnemyTankAI : MonoBehaviour
             MoveTowardsPlayer();
             RotateTurretTowardsPlayer();
 
-            if (Time.time >= nextFireTime)
+            if (!isReloading && Time.time >= nextFireTime)
             {
                 Shoot();
                 nextFireTime = Time.time + 1f / fireRate;
+            }
+            else if (!isReloading)
+            {
+                StartCoroutine(Reload());
             }
         }
     }
@@ -40,7 +46,6 @@ public class EnemyTankAI : MonoBehaviour
 
     void RotateTurretTowardsPlayer()
     {
-
         Vector3 directionToPlayer = player.position - turret.position;
         directionToPlayer.y = 0;
         Quaternion targetRotation = Quaternion.LookRotation(directionToPlayer);
@@ -54,5 +59,18 @@ public class EnemyTankAI : MonoBehaviour
         rb.linearVelocity = firePoint.forward * 20f;
 
         Destroy(bullet, 3f);
+    }
+
+    System.Collections.IEnumerator Reload()
+    {
+        isReloading = true;
+        float elapsedTime = 0f;
+        while (elapsedTime < reloadTime)
+        {
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        isReloading = false; // Po prze�adowaniu bot mo�e zn�w strzela�
     }
 }
