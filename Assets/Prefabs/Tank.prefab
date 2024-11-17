@@ -100,6 +100,10 @@ PrefabInstance:
       value: Tank
       objectReference: {fileID: 0}
     - target: {fileID: -927199367670048503, guid: 38548c4351fb4d644a50593317179b23, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 38548c4351fb4d644a50593317179b23, type: 3}
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
@@ -157,7 +161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  rotationSpeed: 100
+  turnSpeed: 100
 --- !u!114 &2746623657306760010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,6 +178,9 @@ MonoBehaviour:
   firePoint: {fileID: 2020482882813681049}
   bulletSpeed: 20
   fireRate: 1
+  maxAmmo: 30
+  ammoText: {fileID: 0}
+  reloadText: {fileID: 0}
 --- !u!54 &6937832503922765117
 Rigidbody:
   m_ObjectHideFlags: 0

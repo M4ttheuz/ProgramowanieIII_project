@@ -1,19 +1,37 @@
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
+
 
 public class TankMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f;      
-    public float rotationSpeed = 100f; 
+    public int m_PlayerNumber = 1;
+    public float m_Speed = 12f;
+    public float m_TurnSpeed = 180f;
+    private Rigidbody m_Rigidbody;
+    public Transform turret;
+    public float turretRotationSpeed = 10f;
 
-    void Update()
+    private void Start()
     {
-        
-        float move = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime; 
-        float rotation = Input.GetAxis("Horizontal") * rotationSpeed * Time.deltaTime;
+        m_Rigidbody = GetComponent<Rigidbody>();
+    }
 
-        transform.Translate(0, 0, move);
+    private void FixedUpdate()
+    {
+        Move();
+        Turn();
+    }
 
-        transform.Rotate(0, rotation, 0);
+    private void Move()
+    {
+        Vector3 movement = transform.forward * Input.GetAxis("Vertical") * m_Speed * Time.deltaTime;
+        m_Rigidbody.MovePosition(m_Rigidbody.position + movement);
+    }
+
+    private void Turn()
+    {
+        float turn = Input.GetAxis("Horizontal") * m_TurnSpeed * Time.deltaTime;
+        Quaternion turnRotation = Quaternion.Euler(0f, turn, 0f);
+        m_Rigidbody.MoveRotation(m_Rigidbody.rotation * turnRotation);
     }
 }
-
