@@ -10,15 +10,23 @@ public class HUD : MonoBehaviour
 
     void Update()
     {
+        // Wyświetlanie zdrowia
         if (healthText != null && tankHealth != null)
         {
             healthText.text = "HP: " + tankHealth.GetCurrentHealth().ToString();
         }
 
+        // Wyświetlanie prędkości
         if (speedText != null && tankRigidbody != null)
         {
-            float speed = tankRigidbody.linearVelocity.magnitude;
-            speedText.text = "Speed: " + Mathf.Round(speed).ToString() + " m/s";
+            // Obliczanie prędkości w kierunku do przodu
+            Vector3 velocity = tankRigidbody.linearVelocity; // Prędkość światowa
+            Vector3 forward = tankRigidbody.transform.forward; // Kierunek przodu czołgu
+
+            // Prędkość wzdłuż kierunku do przodu
+            float forwardSpeed = Vector3.Dot(velocity, forward);
+
+            speedText.text = "Speed: " + Mathf.Abs(Mathf.Round(forwardSpeed)).ToString() + " m/s";
         }
     }
 }

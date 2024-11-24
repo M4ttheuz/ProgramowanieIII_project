@@ -21,7 +21,7 @@ public class TankHealth : MonoBehaviour
     {
         currentHealth = maxHealth;
 
-        GameObject healthBarInstance = Instantiate(healthBarPrefab, transform.position + Vector3.up * 2, Quaternion.identity, transform);
+        GameObject healthBarInstance = Instantiate(healthBarPrefab, transform.position + Vector3.up * 5, Quaternion.identity, transform);
         healthSlider = healthBarInstance.GetComponent<Slider>();
 
         healthSlider.maxValue = maxHealth;

@@ -513,7 +513,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9335ed2575da5a4a960ec146cf23adf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankSelection: {fileID: 0}
 --- !u!1 &1008658970
 GameObject:
   m_ObjectHideFlags: 0
@@ -558,10 +557,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4fa69744086a8746adfb636b455e7cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tankPrefabs:
-  - {fileID: 1186695897464562, guid: 7ec0249beb2a6944c8d54d4a46ef1b27, type: 3}
+  tanks:
+  - {fileID: 6096664216378074708, guid: 6963b02b3954c714b95b8514d6265d6c, type: 3}
   - {fileID: 7577241834020816391, guid: 6baae014ebc34c547874f4221507302b, type: 3}
-  cameraMovement: {fileID: 0}
+  tankNameText: {fileID: 94802332}
 --- !u!1 &1125310282
 GameObject:
   m_ObjectHideFlags: 0

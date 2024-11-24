@@ -1,37 +1,61 @@
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
-
 
 public class TankMovement : MonoBehaviour
 {
-    public int m_PlayerNumber = 1;
-    public float m_Speed = 12f;
-    public float m_TurnSpeed = 180f;
-    private Rigidbody m_Rigidbody;
-    public Transform turret;
-    public float turretRotationSpeed = 10f;
-
-    private void Start()
-    {
-        m_Rigidbody = GetComponent<Rigidbody>();
-    }
+    public WheelCollider[] driveWheels;
+    public Transform[] wheelMeshes;
+    public float motorForce = 150f;
+    public float steerTorque = 15f;
+    public float brakeForce = 300f;
+    public float rotationSpeed = 100f;
 
     private void FixedUpdate()
     {
         Move();
-        Turn();
+        Steer();
+        RotateTank();
     }
 
     private void Move()
     {
-        Vector3 movement = transform.forward * Input.GetAxis("Vertical") * m_Speed * Time.deltaTime;
-        m_Rigidbody.MovePosition(m_Rigidbody.position + movement);
+        float forward = Input.GetAxis("Vertical");
+
+        foreach (WheelCollider wheel in driveWheels)
+        {
+            wheel.motorTorque = forward * motorForce;
+        }
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            foreach (WheelCollider wheel in driveWheels)
+            {
+                wheel.brakeTorque = brakeForce;
+            }
+        }
+        else
+        {
+            foreach (WheelCollider wheel in driveWheels)
+            {
+                wheel.brakeTorque = 0f;
+            }
+        }
     }
 
-    private void Turn()
+    private void Steer()
     {
-        float turn = Input.GetAxis("Horizontal") * m_TurnSpeed * Time.deltaTime;
-        Quaternion turnRotation = Quaternion.Euler(0f, turn, 0f);
-        m_Rigidbody.MoveRotation(m_Rigidbody.rotation * turnRotation);
+        float turn = Input.GetAxis("Horizontal");
+
+        foreach (WheelCollider wheel in driveWheels)
+        {
+            if (wheel != driveWheels[0]) 
+                continue;
+            wheel.steerAngle = turn * steerTorque;
+        }
+    }
+
+    private void RotateTank()
+    {
+        float turn = Input.GetAxis("Horizontal");
+        transform.Rotate(0f, turn * rotationSpeed * Time.deltaTime, 0f);
     }
 }
