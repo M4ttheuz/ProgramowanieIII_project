@@ -2,15 +2,17 @@ using UnityEngine;
 
 public class EnemyTankAI : MonoBehaviour
 {
-    public Transform player;        // Transform gracza, którego czo³g przeciwnika bêdzie œledziæ
-    public Transform turret;        // Transform wie¿y, która bêdzie obracaæ siê w stronê gracza
-    public Transform firePoint;     // Punkt wystrza³u
-    public GameObject bulletPrefab; // Prefab pocisku
-    public float moveSpeed = 5f;    // Prêdkoœæ ruchu przeciwnika
-    public float rotationSpeed = 2f; // Szybkoœæ obrotu czo³gu
-    public float fireRate = 2f;     // Szybkoœæ strzelania (strza³y na sekundê)
+    public Transform player;
+    public Transform turret;
+    public Transform firePoint;
+    public GameObject bulletPrefab;
+    public float moveSpeed = 5f;
+    public float rotationSpeed = 2f;
+    public float fireRate = 2f;
+    public float reloadTime = 2f;
 
     private float nextFireTime = 0f;
+    private bool isReloading = false;
 
     void Update()
     {
@@ -19,31 +21,31 @@ public class EnemyTankAI : MonoBehaviour
             MoveTowardsPlayer();
             RotateTurretTowardsPlayer();
 
-            if (Time.time >= nextFireTime)
+            if (!isReloading && Time.time >= nextFireTime)
             {
                 Shoot();
                 nextFireTime = Time.time + 1f / fireRate;
+            }
+            else if (!isReloading)
+            {
+                StartCoroutine(Reload());
             }
         }
     }
 
     void MoveTowardsPlayer()
     {
-        // Kierunek w stronê gracza
         Vector3 direction = (player.position - transform.position).normalized;
-        direction.y = 0; // Ignorujemy oœ Y, aby czo³g nie zmienia³ wysokoœci
+        direction.y = 0;
 
-        // Ruch czo³gu przeciwnika
         transform.position += direction * moveSpeed * Time.deltaTime;
 
-        // Obrót w stronê gracza
         Quaternion targetRotation = Quaternion.LookRotation(direction);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
 
     void RotateTurretTowardsPlayer()
     {
-
         Vector3 directionToPlayer = player.position - turret.position;
         directionToPlayer.y = 0;
         Quaternion targetRotation = Quaternion.LookRotation(directionToPlayer);
@@ -57,5 +59,18 @@ public class EnemyTankAI : MonoBehaviour
         rb.linearVelocity = firePoint.forward * 20f;
 
         Destroy(bullet, 3f);
+    }
+
+    System.Collections.IEnumerator Reload()
+    {
+        isReloading = true;
+        float elapsedTime = 0f;
+        while (elapsedTime < reloadTime)
+        {
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        isReloading = false; // Po przeï¿½adowaniu bot moï¿½e znï¿½w strzelaï¿½
     }
 }

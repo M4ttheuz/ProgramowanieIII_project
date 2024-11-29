@@ -1,31 +1,65 @@
 using UnityEngine;
+using TMPro;
 
 public class TankShooting : MonoBehaviour
 {
-    public GameObject bulletPrefab; 
-    public Transform firePoint;    
-    public float bulletSpeed = 20f; 
-    public float fireRate = 1f;     
+    public GameObject bulletPrefab;
+    public Transform firePoint;
+    public float bulletSpeed = 20f;
+    public float fireRate = 5f;
+    public int maxAmmo = 30;
+    private int currentAmmo;
 
     private float nextFireTime = 0f;
+    private float reloadTimeRemaining = 0f;
+
+    public TMP_Text ammoText;
+    public TMP_Text reloadText;
+
+    void Start()
+    {
+        currentAmmo = maxAmmo;
+        UpdateAmmoDisplay();
+    }
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && Time.time >= nextFireTime)
+        if (Input.GetButtonDown("Fire1") && Time.time >= nextFireTime && currentAmmo > 0)
         {
             Shoot();
-            nextFireTime = Time.time + 1f / fireRate;
+            currentAmmo--;
+            nextFireTime = Time.time + fireRate;
+            UpdateAmmoDisplay();
+        }
+
+        if (Time.time < nextFireTime)
+        {
+            reloadTimeRemaining = nextFireTime - Time.time;
+            UpdateReloadDisplay();
         }
     }
 
     void Shoot()
     {
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         rb.linearVelocity = firePoint.forward * bulletSpeed;
-
         Destroy(bullet, 3f);
     }
-}
 
+    void UpdateAmmoDisplay()
+    {
+        if (ammoText != null)
+        {
+            ammoText.text = "Ammo: " + currentAmmo;
+        }
+    }
+
+    void UpdateReloadDisplay()
+    {
+        if (reloadText != null)
+        {
+            reloadText.text = reloadTimeRemaining.ToString("F1") + "s";
+        }
+    }
+}
