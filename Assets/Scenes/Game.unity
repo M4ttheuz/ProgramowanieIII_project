@@ -1347,7 +1347,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1429901260933374908, guid: 6963b02b3954c714b95b8514d6265d6c, type: 3}
       propertyPath: m_LocalPosition.z
+<<<<<<< HEAD
       value: -10.19
+=======
+      value: -10.027856
+>>>>>>> 07d08464b3adf6fdf6dd632065f8c076e9b6558b
       objectReference: {fileID: 0}
     - target: {fileID: 1429901260933374908, guid: 6963b02b3954c714b95b8514d6265d6c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1405,6 +1409,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: T90-A 1
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 7739859686175735347, guid: 6963b02b3954c714b95b8514d6265d6c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.021
@@ -1433,6 +1438,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0.321
       objectReference: {fileID: 0}
+=======
+>>>>>>> 07d08464b3adf6fdf6dd632065f8c076e9b6558b
     - target: {fileID: 7784857441584393658, guid: 6963b02b3954c714b95b8514d6265d6c, type: 3}
       propertyPath: ammoText
       value: 
@@ -1441,10 +1448,13 @@ PrefabInstance:
       propertyPath: reloadText
       value: 
       objectReference: {fileID: 1814219437}
+<<<<<<< HEAD
     - target: {fileID: 8619545748050251926, guid: 6963b02b3954c714b95b8514d6265d6c, type: 3}
       propertyPath: m_ProbeAnchor
       value: 
       objectReference: {fileID: 0}
+=======
+>>>>>>> 07d08464b3adf6fdf6dd632065f8c076e9b6558b
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 0}
@@ -1454,15 +1464,20 @@ PrefabInstance:
     - {fileID: 2555144058666484818, guid: 6963b02b3954c714b95b8514d6265d6c, type: 3}
     - {fileID: 1130022986412971028, guid: 6963b02b3954c714b95b8514d6265d6c, type: 3}
     m_RemovedGameObjects: []
+<<<<<<< HEAD
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 7739859686175735347, guid: 6963b02b3954c714b95b8514d6265d6c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1812333212}
+=======
+    m_AddedGameObjects: []
+>>>>>>> 07d08464b3adf6fdf6dd632065f8c076e9b6558b
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6096664216378074708, guid: 6963b02b3954c714b95b8514d6265d6c, type: 3}
       insertIndex: 6
       addedObject: {fileID: 2028149580}
   m_SourcePrefab: {fileID: 100100000, guid: 6963b02b3954c714b95b8514d6265d6c, type: 3}
+<<<<<<< HEAD
 --- !u!1 &1812333211
 GameObject:
   m_ObjectHideFlags: 0
@@ -1494,6 +1509,8 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1847734353}
   m_LocalEulerAnglesHint: {x: 0, y: -76.36, z: 0}
+=======
+>>>>>>> 07d08464b3adf6fdf6dd632065f8c076e9b6558b
 --- !u!1 &1814219435
 GameObject:
   m_ObjectHideFlags: 0
@@ -1756,7 +1773,11 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
+<<<<<<< HEAD
   m_margin: {x: 0, y: 0, z: -147.05936, w: 0}
+=======
+  m_margin: {x: 0, y: 0, z: -76.675964, w: 0}
+>>>>>>> 07d08464b3adf6fdf6dd632065f8c076e9b6558b
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1870,10 +1891,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12b1075946aaa484da1ac65ae111cc2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   camera: {fileID: 330585545}
   turret: {fileID: 1847734353}
   gun: {fileID: 1968637468}
   turretRotationSpeed: 100
+=======
+  turret: {fileID: 1847734353}
+  gun: {fileID: 1968637468}
+  turretRotationSpeed: 20
+>>>>>>> 07d08464b3adf6fdf6dd632065f8c076e9b6558b
   gunElevationSpeed: 50
   maxGunElevation: 10
   minGunElevation: -5
