@@ -3,7 +3,6 @@ using UnityEngine;
 public class TankMovement : MonoBehaviour
 {
     public WheelCollider[] driveWheels;
-    public Transform[] wheelMeshes;
     public float motorForce = 150f;
     public float steerTorque = 15f;
     public float brakeForce = 300f;
