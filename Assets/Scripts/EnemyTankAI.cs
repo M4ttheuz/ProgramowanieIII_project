@@ -14,7 +14,9 @@ public class EnemyTankAI : MonoBehaviour
     private float nextFireTime = 0f;
     private bool isReloading = false;
 
-    void Update()
+    public GameController gameController;
+
+    private void Update()
     {
         if (player != null)
         {
@@ -33,12 +35,22 @@ public class EnemyTankAI : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        if (SaveManager.Instance != null)
+        {
+            GameData currentData = SaveManager.Instance.LoadGame();
+            currentData.tanksDestroyed++;
+            SaveManager.Instance.SaveGame(currentData);
+        }
+    }
+
     void MoveTowardsPlayer()
     {
         Vector3 direction = (player.position - transform.position).normalized;
         direction.y = 0;
 
-        transform.position += direction * moveSpeed * Time.deltaTime;
+        transform.position += moveSpeed * Time.deltaTime * direction;
 
         Quaternion targetRotation = Quaternion.LookRotation(direction);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
@@ -71,6 +83,6 @@ public class EnemyTankAI : MonoBehaviour
             yield return null;
         }
 
-        isReloading = false; // Po prze�adowaniu bot mo�e zn�w strzela�
+        isReloading = false;
     }
 }
