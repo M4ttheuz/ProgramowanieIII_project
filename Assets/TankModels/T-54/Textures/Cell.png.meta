@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: 277958a23465c3442b1c478af3fc93f2
-=======
-guid: b348b045a5863eb4ebce1115cd8eb373
->>>>>>> 07d08464b3adf6fdf6dd632065f8c076e9b6558b
+guid: 69dc444f08051d24ea5ca1790a33f97f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -130,10 +126,3 @@ TextureImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 225955
-  packageName: Tank 3D Model
-  packageVersion: 1.0.6
-  assetPath: Assets/Isle of Assets/Tank 3D Model/Textures/Cell.png
-  uploadId: 621320

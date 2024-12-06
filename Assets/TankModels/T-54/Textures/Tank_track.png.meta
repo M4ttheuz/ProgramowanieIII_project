@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: bbb8a50ac378ee947b95e07eeafb0efd
-=======
-guid: 1bd7ca5586432004894f615bb48b0b64
->>>>>>> 07d08464b3adf6fdf6dd632065f8c076e9b6558b
+guid: 57282f0862121d340ad935f05852c7f3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -130,10 +126,3 @@ TextureImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 225955
-  packageName: Tank 3D Model
-  packageVersion: 1.0.6
-  assetPath: Assets/Isle of Assets/Tank 3D Model/Textures/Tank_track.png
-  uploadId: 621320

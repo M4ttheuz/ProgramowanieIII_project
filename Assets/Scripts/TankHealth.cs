@@ -9,8 +9,6 @@ public class TankHealth : MonoBehaviour
     public GameObject healthBarPrefab;
     private Slider healthSlider;
 
-    public GameObject GameOverText;
-
     public int GetCurrentHealth()
     {
         return currentHealth;
@@ -26,11 +24,6 @@ public class TankHealth : MonoBehaviour
 
         healthSlider.maxValue = maxHealth;
         healthSlider.value = currentHealth;
-
-        if (GameOverText != null)
-        {
-            GameOverText.SetActive(false);
-        }
     }
 
     public void TakeDamage(int damage)
@@ -51,13 +44,6 @@ public class TankHealth : MonoBehaviour
 
     void Die()
     {
-        if (GameOverText != null)
-        {
-            GameOverText.SetActive(true);
-        }
-
-        Time.timeScale = 0f;
-
         Debug.Log(gameObject.name + " zosta³ zniszczony!");
 
         Destroy(gameObject);

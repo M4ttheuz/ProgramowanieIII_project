@@ -3394,11 +3394,7 @@ GameObject:
   - component: {fileID: 573419564223592997}
   - component: {fileID: 7784857441584393658}
   - component: {fileID: 5654998171020874328}
-  - component: {fileID: 2555144058666484818}
-  - component: {fileID: 6094292769568514596}
-  - component: {fileID: 1130022986412971028}
   - component: {fileID: 3001778197283996334}
-  - component: {fileID: 705402683292882655}
   m_Layer: 0
   m_Name: T90-A 1
   m_TagString: Player
@@ -3505,11 +3501,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d04f3de465458614191d5c65056359cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PlayerNumber: 1
-  m_Speed: 10
-  m_TurnSpeed: 50
-  turret: {fileID: 7739859686175735347}
-  turretRotationSpeed: 10
+  driveWheels: []
+  motorForce: 150
+  steerTorque: 15
+  brakeForce: 300
+  rotationSpeed: 100
+  maxSpeed: 50
+  tankRigidbody: {fileID: 0}
 --- !u!114 &7784857441584393658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3545,54 +3543,6 @@ MonoBehaviour:
   currentHealth: 0
   healthBarPrefab: {fileID: 1766921081433498993, guid: 4c5945d284862d9488226b714712ba7d, type: 3}
   GameOverText: {fileID: 7886109693454118764, guid: ff3134e613b69264a934ae6fde41ac56, type: 3}
---- !u!114 &2555144058666484818
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6096664216378074708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22d41d4353ce06b45bbf92add2c5ac05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  turret: {fileID: 7739859686175735347}
-  rotationSpeed: 2
---- !u!114 &6094292769568514596
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6096664216378074708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 907641c6e37d9b843bc6119c9167d2c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  barrel: {fileID: 6004715904663955309}
-  cameraTransform: {fileID: 0}
-  elevationSpeed: 30
-  maxElevation: 10
-  minDepression: -5
---- !u!114 &1130022986412971028
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6096664216378074708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05b11613c45a6d34a841ddeca0d672e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraMovement: {fileID: 0}
-  crosshair: {fileID: 0}
-  gun: {fileID: 0}
-  muzzle: {fileID: 0}
-  target: {fileID: 0}
 --- !u!54 &3001778197283996334
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3620,28 +3570,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &705402683292882655
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6096664216378074708}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 6118207091096d94482fb6be313ac6fc, type: 3}
 --- !u!1 &6148867616965707281
 GameObject:
   m_ObjectHideFlags: 0

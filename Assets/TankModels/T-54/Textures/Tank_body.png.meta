@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: 48963161364834a4894da5dda0251f6c
-=======
-guid: 3c720f31b1ea04c4caa9dafea1f811fd
->>>>>>> 07d08464b3adf6fdf6dd632065f8c076e9b6558b
+guid: 4f16717cff6a5854d842cfb8d6981556
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -130,10 +126,3 @@ TextureImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 225955
-  packageName: Tank 3D Model
-  packageVersion: 1.0.6
-  assetPath: Assets/Isle of Assets/Tank 3D Model/Textures/Tank_body.png
-  uploadId: 621320
