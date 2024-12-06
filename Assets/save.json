@@ -1,4 +1,9 @@
 {
+<<<<<<< HEAD
     "tanksDestroyed": 42,
     "playedBattles": 40
+=======
+    "tanksDestroyed": 5,
+    "playedTime": 0
+>>>>>>> 6ef7eedccadd52639a0f336e41b852cd084f379a
 }

@@ -3502,12 +3502,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   driveWheels: []
+<<<<<<< HEAD
+=======
+  steeringWheels: []
+  wheelMeshes: []
+>>>>>>> 6ef7eedccadd52639a0f336e41b852cd084f379a
   motorForce: 150
   steerTorque: 15
   brakeForce: 300
   rotationSpeed: 100
+<<<<<<< HEAD
   maxSpeed: 50
   tankRigidbody: {fileID: 0}
+=======
+>>>>>>> 6ef7eedccadd52639a0f336e41b852cd084f379a
 --- !u!114 &7784857441584393658
 MonoBehaviour:
   m_ObjectHideFlags: 0

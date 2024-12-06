@@ -16,6 +16,7 @@ public class EnemyTankAI : MonoBehaviour
 
     public GameController gameController;
 
+<<<<<<< HEAD
     private void Start()
     {
         GameData currentData = SaveManager.Instance.LoadGame();
@@ -23,6 +24,8 @@ public class EnemyTankAI : MonoBehaviour
         SaveManager.Instance.SaveGame(currentData);
     }
 
+=======
+>>>>>>> 6ef7eedccadd52639a0f336e41b852cd084f379a
     private void Update()
     {
         if (player != null)

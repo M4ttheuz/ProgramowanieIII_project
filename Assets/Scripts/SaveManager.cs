@@ -48,5 +48,9 @@ public class SaveManager : MonoBehaviour
 public class GameData
 {
     public int tanksDestroyed;
+<<<<<<< HEAD
     public int playedBattles;
+=======
+    public int playedTime;
+>>>>>>> 6ef7eedccadd52639a0f336e41b852cd084f379a
 }
