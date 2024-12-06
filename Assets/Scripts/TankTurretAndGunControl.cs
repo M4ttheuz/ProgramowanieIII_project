@@ -16,12 +16,7 @@ public class TankTurretAndGunControl : MonoBehaviour
         RotateTurret();
         ElevateGun();
     }
-   void RotateTurret()
-{
-        Vector3 localDirection = tankBody.InverseTransformDirection(cameraTransform.forward);
-        localDirection.y = 0;
 
-<<<<<<< HEAD
     private void RotateTurret()
     {
         if (IsTankFlipped())
@@ -38,12 +33,6 @@ public class TankTurretAndGunControl : MonoBehaviour
 
             turret.rotation = Quaternion.RotateTowards(turret.rotation, targetRotation, turretRotationSpeed * Time.deltaTime);
         }
-=======
-        Vector3 worldDirection = tankBody.TransformDirection(localDirection);
-        Quaternion targetRotation = Quaternion.LookRotation(worldDirection, Vector3.up);
-
-        turret.rotation = Quaternion.RotateTowards(turret.rotation, targetRotation, turretRotationSpeed * Time.deltaTime);
->>>>>>> 6ef7eedccadd52639a0f336e41b852cd084f379a
     }
 
     private void ElevateGun()
