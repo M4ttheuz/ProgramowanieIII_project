@@ -24,6 +24,7 @@ public class TankShooting : MonoBehaviour
 
     void Update()
     {
+        reloadText.color = Color.green;
         if (Input.GetButtonDown("Fire1") && Time.time >= nextFireTime && currentAmmo > 0)
         {
             Shoot();
@@ -59,6 +60,7 @@ public class TankShooting : MonoBehaviour
     {
         if (reloadText != null)
         {
+            reloadText.color = Color.red;
             reloadText.text = reloadTimeRemaining.ToString("F1") + "s";
         }
     }

@@ -7,12 +7,24 @@ public class TankMovement : MonoBehaviour
     public float steerTorque = 15f;
     public float brakeForce = 300f;
     public float rotationSpeed = 100f;
+    public float maxSpeed = 50f;
+
+    public Rigidbody tankRigidbody;
 
     private void FixedUpdate()
     {
         Move();
+        LimitSpeed();
         Steer();
         RotateTank();
+    }
+
+    private void LimitSpeed()
+    {
+        if (tankRigidbody.linearVelocity.magnitude > maxSpeed)
+        {
+            tankRigidbody.linearVelocity = tankRigidbody.linearVelocity.normalized * maxSpeed;
+        }
     }
 
     private void Move()

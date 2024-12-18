@@ -3395,7 +3395,6 @@ GameObject:
   - component: {fileID: 7784857441584393658}
   - component: {fileID: 5654998171020874328}
   - component: {fileID: 3001778197283996334}
-  - component: {fileID: 705402683292882655}
   m_Layer: 0
   m_Name: T90-A 1
   m_TagString: Player
@@ -3503,12 +3502,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   driveWheels: []
+<<<<<<< HEAD
+=======
   steeringWheels: []
   wheelMeshes: []
+>>>>>>> 6ef7eedccadd52639a0f336e41b852cd084f379a
   motorForce: 150
   steerTorque: 15
   brakeForce: 300
   rotationSpeed: 100
+<<<<<<< HEAD
+  maxSpeed: 50
+  tankRigidbody: {fileID: 0}
+=======
+>>>>>>> 6ef7eedccadd52639a0f336e41b852cd084f379a
 --- !u!114 &7784857441584393658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3571,28 +3578,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &705402683292882655
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6096664216378074708}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 6118207091096d94482fb6be313ac6fc, type: 3}
 --- !u!1 &6148867616965707281
 GameObject:
   m_ObjectHideFlags: 0

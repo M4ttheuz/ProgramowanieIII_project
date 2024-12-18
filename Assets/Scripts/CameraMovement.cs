@@ -8,7 +8,7 @@ public class CameraMovement : MonoBehaviour
     public Vector2 xminmax;
     public Transform target;
 
-    private void LateUpdate()
+    private void Update()
     {
         x += Input.GetAxis("Mouse Y") * sensitivity * -1;
         y += Input.GetAxis("Mouse X") * sensitivity;

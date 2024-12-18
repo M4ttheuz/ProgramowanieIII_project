@@ -14,12 +14,6 @@ public class GameController : MonoBehaviour
         Debug.Log("Tank destroyed! Total: " + tanksDestroyed);
     }
 
-    public void playBattle()
-    {
-        playedBattles++;
-        Debug.Log("Battle played! Total: " + playedBattles);
-    }
-
     private void Start()
     {
         GameData data = saveManager.LoadGame();
