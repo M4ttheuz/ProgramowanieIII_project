@@ -16,6 +16,15 @@ public class EnemyTankAI : MonoBehaviour
 
     public GameController gameController;
 
+    private void Start()
+    {
+        if (gameController != null)
+        {
+            GameData currentData = SaveManager.Instance.LoadGame();
+            currentData.playedBattles++;
+            SaveManager.Instance.SaveGame(currentData);
+        }
+    }
     private void Update()
     {
         if (player != null)

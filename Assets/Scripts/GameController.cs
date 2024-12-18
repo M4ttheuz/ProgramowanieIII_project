@@ -5,12 +5,19 @@ public class GameController : MonoBehaviour
     public Transform player;
     public SaveManager saveManager;
     public int tanksDestroyed = 0;
-    public int playedTime = 0;
+    public int playedBattles = 0;
+    public GameController gameController;
 
     public void TankDestroyed()
     {
         tanksDestroyed++;
         Debug.Log("Tank destroyed! Total: " + tanksDestroyed);
+    }
+
+    public void playBattle()
+    {
+        playedBattles++;
+        Debug.Log("Battle played! Total: " + playedBattles);
     }
 
     private void Start()
@@ -19,7 +26,7 @@ public class GameController : MonoBehaviour
         if (data != null)
         {
             tanksDestroyed = data.tanksDestroyed;
-            playedTime = data.playedTime;
+            playedBattles = data.playedBattles;
         }
     }
 }
