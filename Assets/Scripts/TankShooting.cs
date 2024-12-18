@@ -1,5 +1,5 @@
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class TankShooting : MonoBehaviour
 {
@@ -13,8 +13,8 @@ public class TankShooting : MonoBehaviour
     private float nextFireTime = 0f;
     private float reloadTimeRemaining = 0f;
 
-    public TMP_Text ammoText;
-    public TMP_Text reloadText;
+    public Text ammoText;
+    public Text reloadText;
 
     void Start()
     {

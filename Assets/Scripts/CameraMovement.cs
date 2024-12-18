@@ -2,20 +2,31 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-    float x, y;
+    public Transform target;
     public float sensitivity = 5f;
     public float distance = 10f;
-    public Vector2 xminmax;
-    public Transform target;
 
-    private void Update()
+    private float yaw = 0f;
+    private float pitch = 0f;
+
+    void Start()
     {
-        x += Input.GetAxis("Mouse Y") * sensitivity * -1;
-        y += Input.GetAxis("Mouse X") * sensitivity;
+        Vector3 angles = transform.eulerAngles;
+        yaw = angles.y;
+        pitch = angles.x;
+    }
 
-        x = Mathf.Clamp(x, xminmax.x, xminmax.y);
+    void Update()
+    {
+        yaw += Input.GetAxis("Mouse X") * sensitivity;
+        pitch -= Input.GetAxis("Mouse Y") * sensitivity;
 
-        transform.eulerAngles = new Vector3(x, y, 0);
-        transform.position = target.position - transform.forward * distance;
+        pitch = Mathf.Clamp(pitch, -35f, 60f);
+
+        Quaternion rotation = Quaternion.Euler(pitch, yaw, 0f);
+        Vector3 offset = new Vector3(0f, 2f, -distance);
+
+        transform.position = target.position + rotation * offset;
+        transform.LookAt(target.position);
     }
 }

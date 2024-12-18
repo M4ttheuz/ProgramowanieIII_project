@@ -1,10 +1,10 @@
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
 public class HUD : MonoBehaviour
 {
-    public TextMeshProUGUI healthText;
-    public TextMeshProUGUI speedText;
+    public Text healthText;
+    public Text speedText;
     public TankHealth tankHealth;
     public Rigidbody tankRigidbody;
 
