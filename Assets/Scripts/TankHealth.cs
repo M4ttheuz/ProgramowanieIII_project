@@ -5,6 +5,7 @@ public class TankHealth : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth;
+    public int totalDamageDealt = 0;
 
     public GameObject healthBarPrefab;
     private Slider healthSlider;
@@ -12,6 +13,11 @@ public class TankHealth : MonoBehaviour
     public int GetCurrentHealth()
     {
         return currentHealth;
+    }
+
+    public int GetCurrentDamage()
+    {
+        return totalDamageDealt;
     }
 
 
@@ -29,6 +35,7 @@ public class TankHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        totalDamageDealt += damage;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
         if (healthSlider != null)
@@ -45,7 +52,6 @@ public class TankHealth : MonoBehaviour
     void Die()
     {
         Debug.Log(gameObject.name + " zosta³ zniszczony!");
-
         Destroy(gameObject);
     }
 }

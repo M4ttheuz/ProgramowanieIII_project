@@ -25,6 +25,7 @@ public class EnemyTankAI : MonoBehaviour
             SaveManager.Instance.SaveGame(currentData);
         }
     }
+
     private void Update()
     {
         if (player != null)
@@ -46,6 +47,11 @@ public class EnemyTankAI : MonoBehaviour
 
     private void OnDestroy()
     {
+        if (gameController != null)
+        {
+            gameController.TankDestroyed();
+        }
+
         if (SaveManager.Instance != null)
         {
             GameData currentData = SaveManager.Instance.LoadGame();
@@ -76,6 +82,7 @@ public class EnemyTankAI : MonoBehaviour
     void Shoot()
     {
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        bullet.GetComponent<Bullet>().isPlayerBullet = false;
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         rb.linearVelocity = firePoint.forward * 20f;
 
