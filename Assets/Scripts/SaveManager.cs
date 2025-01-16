@@ -12,7 +12,6 @@ public class SaveManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -26,7 +25,6 @@ public class SaveManager : MonoBehaviour
     {
         string json = JsonUtility.ToJson(data, true);
         File.WriteAllText(saveFilePath, json);
-        Debug.Log("Game Saved: " + saveFilePath);
     }
 
     public GameData LoadGame()
@@ -35,7 +33,6 @@ public class SaveManager : MonoBehaviour
         {
             string json = File.ReadAllText(saveFilePath);
             GameData data = JsonUtility.FromJson<GameData>(json);
-            Debug.Log("Game Loaded");
             return data;
         }
 

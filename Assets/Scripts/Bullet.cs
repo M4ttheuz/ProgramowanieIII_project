@@ -10,15 +10,21 @@ public class Bullet : MonoBehaviour
     {
         int randomDamage = Mathf.RoundToInt(baseDamage * UnityEngine.Random.Range(0.75f, 1.25f));
 
-        TankHealth targetHealth = collision.gameObject.GetComponent<TankHealth>();
-
-        if (targetHealth != null)
+        if (isPlayerBullet)
         {
-            targetHealth.TakeDamage(randomDamage);
-
-            if (isPlayerBullet)
+            EnemyHealth targetHealth = collision.gameObject.GetComponent<EnemyHealth>();
+            if (targetHealth != null)
             {
+                targetHealth.TakeDamage(randomDamage);
                 PlayerStats.totalDamageDealt += randomDamage;
+            }
+        }
+        else
+        {
+            PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(randomDamage);
             }
         }
 

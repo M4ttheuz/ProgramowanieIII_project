@@ -11,8 +11,8 @@ public class GameController : MonoBehaviour
     public int playedBattles = 0;
     public BattleResult battleResult;
 
-    public List<TankHealth> enemyTanks;
-    public TankHealth playerTank;
+    public List<EnemyHealth> enemyTanks;
+    public PlayerHealth playerTank;
 
     private void Start()
     {
@@ -27,7 +27,6 @@ public class GameController : MonoBehaviour
     public void TankDestroyed()
     {
         tanksDestroyed++;
-        Debug.Log("Tank destroyed! Total: " + tanksDestroyed);
         CheckBattleEnd();
     }
 
@@ -40,7 +39,7 @@ public class GameController : MonoBehaviour
         }
 
         bool allEnemiesDefeated = true;
-        foreach (TankHealth enemy in enemyTanks)
+        foreach (EnemyHealth enemy in enemyTanks)
         {
             if (enemy.currentHealth > 0)
             {

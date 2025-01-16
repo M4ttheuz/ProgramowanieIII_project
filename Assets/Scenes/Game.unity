@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &110109915 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8120714693820989751, guid: 449e394139f6ef54cab6268a0d7526b8, type: 3}
+  m_PrefabInstance: {fileID: 5822361111103142647}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &233449170
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,8 +212,8 @@ MonoBehaviour:
   healthText: {fileID: 2133947816}
   speedText: {fileID: 2132085207}
   damageText: {fileID: 2123506700}
-  tankHealth: {fileID: 7304584260220465089}
-  tankRigidbody: {fileID: 6088362884934933742}
+  playerHealth: {fileID: 7304584260220465096}
+  playerRigidbody: {fileID: 6088362884934933742}
 --- !u!1 &327819422
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,8 +265,8 @@ MonoBehaviour:
   playedBattles: 0
   battleResult: {fileID: 327819425}
   enemyTanks:
-  - {fileID: 1903803411}
-  playerTank: {fileID: 7304584260220465089}
+  - {fileID: 1903803418}
+  playerTank: {fileID: 7304584260220465096}
 --- !u!114 &327819425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -879,6 +884,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 980617267}
   m_CullTransparentMesh: 1
+--- !u!1 &1204077158 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7180281261217081572, guid: 2e4fb989bfafd324a90cce0c31939dba, type: 3}
+  m_PrefabInstance: {fileID: 1058169208633672181}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1294353271
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1158,17 +1168,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1679082769}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1903803411 stripped
+--- !u!114 &1903803418
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2766335857542446039, guid: 2e4fb989bfafd324a90cce0c31939dba, type: 3}
-  m_PrefabInstance: {fileID: 1058169208633672181}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1204077158}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb85935555d9a82489c5cc68c126beb3, type: 3}
+  m_Script: {fileID: 11500000, guid: f5fb8c93dbcbdff4984a9a34531f0068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 20
+  currentHealth: 0
+  healthBarPrefab: {fileID: 1766921081433498993, guid: 4c5945d284862d9488226b714712ba7d, type: 3}
 --- !u!1 &1939804730
 GameObject:
   m_ObjectHideFlags: 0
@@ -1772,10 +1786,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7180281261217081572, guid: 2e4fb989bfafd324a90cce0c31939dba, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7180281261217081572, guid: 2e4fb989bfafd324a90cce0c31939dba, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1903803418}
   m_SourcePrefab: {fileID: 100100000, guid: 2e4fb989bfafd324a90cce0c31939dba, type: 3}
 --- !u!4 &2601194105916738401 stripped
 Transform:
@@ -1847,6 +1868,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 5087755687010442380, guid: 449e394139f6ef54cab6268a0d7526b8, type: 3}
+      propertyPath: healthBarPrefab
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8120714693820989751, guid: 449e394139f6ef54cab6268a0d7526b8, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1862,24 +1887,32 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8120714693820989751, guid: 449e394139f6ef54cab6268a0d7526b8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7304584260220465096}
   m_SourcePrefab: {fileID: 100100000, guid: 449e394139f6ef54cab6268a0d7526b8, type: 3}
 --- !u!54 &6088362884934933742 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 2464790833882239303, guid: 449e394139f6ef54cab6268a0d7526b8, type: 3}
   m_PrefabInstance: {fileID: 5822361111103142647}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7304584260220465089 stripped
+--- !u!114 &7304584260220465096
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5087755687010442380, guid: 449e394139f6ef54cab6268a0d7526b8, type: 3}
-  m_PrefabInstance: {fileID: 5822361111103142647}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 110109915}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb85935555d9a82489c5cc68c126beb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
+  totalDamageDealt: 0
+  healthBarPrefab: {fileID: 1766921081433498993, guid: 4c5945d284862d9488226b714712ba7d, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
