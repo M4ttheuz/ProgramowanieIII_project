@@ -26,7 +26,8 @@ public class GameController : MonoBehaviour
 
     public void TankDestroyed()
     {
-        tanksDestroyed++;
+        if(playerTank.currentHealth > 0)
+            tanksDestroyed++;
         CheckBattleEnd();
     }
 

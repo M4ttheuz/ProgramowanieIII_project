@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 
 {
-    public GameController gameController;
     public void StartGame()
     {
+       Time.timeScale = 1f;
        SceneManager.LoadScene("Game");
        Cursor.visible = false;
        Cursor.lockState = CursorLockMode.Locked;

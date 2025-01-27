@@ -15,8 +15,13 @@ public class Bullet : MonoBehaviour
             EnemyHealth targetHealth = collision.gameObject.GetComponent<EnemyHealth>();
             if (targetHealth != null)
             {
+                int initialHealth = targetHealth.GetCurrentHealth();
+
                 targetHealth.TakeDamage(randomDamage);
-                PlayerStats.totalDamageDealt += randomDamage;
+
+                int actualDamageDealt = initialHealth - targetHealth.GetCurrentHealth();
+
+                PlayerStats.totalDamageDealt += actualDamageDealt;
             }
         }
         else

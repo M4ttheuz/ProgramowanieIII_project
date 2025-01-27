@@ -6,6 +6,8 @@ public class EnemyTankAI : MonoBehaviour
     public Transform turret;
     public Transform firePoint;
     public GameObject bulletPrefab;
+    public AudioClip shootSound;
+    private AudioSource audioSource;
     public float moveSpeed = 5f;
     public float rotationSpeed = 2f;
     public float fireRate = 2f;
@@ -18,6 +20,7 @@ public class EnemyTankAI : MonoBehaviour
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         if (gameController != null)
         {
             GameData currentData = SaveManager.Instance.LoadGame();
@@ -81,6 +84,10 @@ public class EnemyTankAI : MonoBehaviour
 
     void Shoot()
     {
+        if (audioSource != null && shootSound != null)
+        {
+            audioSource.PlayOneShot(shootSound);
+        }
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         bullet.GetComponent<Bullet>().isPlayerBullet = false;
         Rigidbody rb = bullet.GetComponent<Rigidbody>();

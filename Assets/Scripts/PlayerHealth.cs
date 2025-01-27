@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerHealth : MonoBehaviour
+public class PlayerHealth : MonoBehaviour, IDamageable
 {
     public int maxHealth = 100;
     public int currentHealth;
@@ -9,17 +9,12 @@ public class PlayerHealth : MonoBehaviour
 
     public GameObject healthBarPrefab;
     private Slider healthSlider;
+    public GameController gameController;
 
     public int GetCurrentHealth()
     {
         return currentHealth;
     }
-
-    public int GetCurrentDamage()
-    {
-        return totalDamageDealt;
-    }
-
 
     void Start()
     {
@@ -51,6 +46,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Die()
     {
+        gameController.TankDestroyed();
         Destroy(gameObject);
     }
 }

@@ -5,6 +5,8 @@ public class TankShooting : MonoBehaviour
 {
     public GameObject bulletPrefab;
     public Transform firePoint;
+    public AudioClip shootSound;
+    private AudioSource audioSource;
     public float bulletSpeed = 20f;
     public float fireRate = 5f;
     public int maxAmmo = 30;
@@ -20,6 +22,7 @@ public class TankShooting : MonoBehaviour
     {
         currentAmmo = maxAmmo;
         UpdateAmmoDisplay();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -42,10 +45,15 @@ public class TankShooting : MonoBehaviour
 
     void Shoot()
     {
+        if (audioSource != null && shootSound != null)
+        {
+            audioSource.PlayOneShot(shootSound);
+        }
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         bullet.GetComponent<Bullet>().isPlayerBullet = true;
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         rb.linearVelocity = firePoint.forward * bulletSpeed;
+
         Destroy(bullet, 3f);
     }
 
